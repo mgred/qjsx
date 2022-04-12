@@ -1,0 +1,9 @@
+{
+  "name": "@quickts/types",
+  "main": "",
+  "types": "index.d.ts",
+  "files": [
+    "*.d.ts",
+    "package.json"
+  ]
+}

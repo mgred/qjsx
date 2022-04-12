@@ -1,0 +1,6 @@
+{
+  "name": "@quickts/web",
+  "main": "index.js",
+  "version": "0.0.0-PLACEHOLDER",
+  "types": "index.d.ts"
+}
