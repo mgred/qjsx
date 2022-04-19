@@ -1,0 +1,22 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "js_library")
+load("//tools:typescript.bzl", "ts_project")
+
+ts_project(
+    name = "std_ts",
+    # tsconfig = "//packages/testing:tsconfig.json",
+    extends = "//:tsconfig.json",
+    tsconfig = {
+        "compilerOptions": {
+            "types": [],
+        }
+    },
+    srcs = [":index.ts"],
+)
+
+js_library(
+    name = "std",
+    package_name = "std",
+    srcs = [":package.json"],
+    deps = [":std_ts"],
+    visibility = ["//packages:__subpackages__"],
+)

@@ -1,6 +1,7 @@
 {
   "name": "@quickts/io",
   "main": "index.js",
+  "type": "module",
   "version": "0.0.0-PLACEHOLDER",
   "types": "index.d.ts"
 }

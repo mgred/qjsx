@@ -10,6 +10,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "types": ["@quickts/types"],
     "paths": {
       "@quickts/io": ["packages/io"],
@@ -29,6 +31,7 @@
       "bazel-out/x64_windows-opt-exec-2B5CBBC6/bin"
     ]
   },
+  "references": [{ "path": "./tsconfig.test.json" }],
   "include": ["packages/**/*.ts"],
   "exclude": ["external/*"]
 }

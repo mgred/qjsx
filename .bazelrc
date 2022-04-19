@@ -79,9 +79,13 @@ build:windows --experimental_inprocess_symlink_creation
 build --incompatible_strict_action_env
 run --incompatible_strict_action_env
 
-# When running `bazel coverage` --instrument_test_targets needs to be set in order to 
+# When running `bazel coverage` --instrument_test_targets needs to be set in order to
 # collect coverage information from test targets
+# coverage --config=coverage
 coverage --instrument_test_targets
+coverage --combined_report=lcov
+coverage --instrumentation_filter="^//packages/.*[/:],-//packages/testing[/:]"
+# build:coverage --combined_report=lcov
 
 # Load any settings specific to the current user.
 # .bazelrc.user should appear in .gitignore so that settings are not shared with team members
