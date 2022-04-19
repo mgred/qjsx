@@ -1,2 +1,2 @@
-export function open() {}
-export function popen() {}
+export const open = jasmine.createSpy();
+export const popen = jasmine.createSpy();

@@ -3,12 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@bazel/bazelisk": "latest",
     "@bazel/buildifier": "latest",
-    "@bazel/esbuild": "^5.2.0",
     "@bazel/ibazel": "latest",
     "@bazel/jasmine": "^5.4.0",
-    "@bazel/typescript": "latest",
+    "@bazel/typescript": "^5.4.0",
     "@types/jasmine": "^4.0.3",
     "c8": "^7.11.0",
     "jasmine": "^4.1.0",

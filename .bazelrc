@@ -84,7 +84,7 @@ run --incompatible_strict_action_env
 # coverage --config=coverage
 coverage --instrument_test_targets
 coverage --combined_report=lcov
-coverage --instrumentation_filter="^//packages/.*[/:],-//packages/testing[/:]"
+coverage --instrumentation_filter="^//packages/.*[/:],-//packages/testing[/:],-//packages/.*:.*_ts_test"
 # build:coverage --combined_report=lcov
 
 # Load any settings specific to the current user.
