@@ -1,5 +1,5 @@
 {
-  "name": "quickts",
+  "name": "qjsx",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -13,6 +13,7 @@
     "typescript": "latest"
   },
   "scripts": {
+    "link-types": "cd packages/types && npm link; cd -; npm link @qjsx/types",
     "build": "bazel build //...",
     "test": "bazel test //..."
   }

@@ -1,4 +1,4 @@
-workspace(name = "quickts")
+workspace(name = "qjsx")
 
 load("//tools:bazel_deps.bzl", "fetch_dependencies")
 
@@ -14,6 +14,6 @@ npm_install(
     package_json = "//:package.json",
     package_lock_json = "//:package-lock.json",
     links = {
-        "@quickts/types": "//packages/types",
+        "@qjsx/types": "//packages/types",
     },
 )

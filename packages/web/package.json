@@ -1,6 +1,7 @@
 {
-  "name": "@quickts/web",
+  "name": "@qjsx/web",
   "main": "index.js",
   "version": "0.0.0-PLACEHOLDER",
-  "types": "index.d.ts"
+  "types": "index.d.ts",
+  "type": "module"
 }

@@ -4,15 +4,15 @@ load("@npm//@bazel/jasmine:index.bzl", "jasmine_node_test")
 
 def ts_package(name):
 
-  package_name = "@quickts/%s" % name
+  package_name = "@qjsx/%s" % name
   ts_name = "%s_ts" % name
-  ts_test_name = "%s_ts_test"
+  ts_test_name = "%s_ts_test" % name
 
   ts_project(
       name = ts_name,
       srcs = [":index.ts"],
       deps = [
-          "@npm//@quickts/types",
+          "@npm//@qjsx/types",
       ],
   )
 

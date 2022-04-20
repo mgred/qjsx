@@ -12,10 +12,10 @@
     "baseUrl": ".",
     "inlineSourceMap": true,
     "inlineSources": true,
-    "types": ["@quickts/types"],
+    "types": ["@qjsx/types"],
     "paths": {
-      "@quickts/io": ["packages/io"],
-      "@quickts/web": ["packages/web"]
+      "@qjsx/io": ["packages/io"],
+      "@qjsx/web": ["packages/web"]
     },
     "rootDirs": [
       ".",
