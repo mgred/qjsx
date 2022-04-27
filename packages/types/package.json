@@ -3,6 +3,7 @@
   "main": "",
   "types": "index.d.ts",
   "version": "0.0.0-PLACEHOLDER",
+  "license": "GPL-3.0-or-later",
   "files": [
     "*.d.ts",
     "package.json"

@@ -2,6 +2,7 @@
   "name": "@qjsx/web",
   "main": "index.js",
   "version": "0.0.0-PLACEHOLDER",
+  "license": "GPL-3.0-or-later",
   "types": "index.d.ts",
   "type": "module",
   "repository": {

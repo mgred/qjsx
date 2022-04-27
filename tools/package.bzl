@@ -46,10 +46,17 @@ def ts_package(name):
       deps = [ts_name],
   )
 
+  native.genrule(
+      name = "license",
+      outs = ["LICENSE"],
+      srcs = ["//:COPYING"],
+      cmd = "cp $< $(OUTS)",
+  )
+
   pkg_npm(
       name = "%s_npm" % name,
       package_name = package_name,
       srcs = [":package.json"],
       substitutions = {"0.0.0-PLACEHOLDER": "{PACKAGE_VERSION}"},
-      deps = [ts_name],
+      deps = [ts_name, ":LICENSE"],
   )

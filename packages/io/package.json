@@ -3,6 +3,7 @@
   "main": "index.js",
   "type": "module",
   "version": "0.0.0-PLACEHOLDER",
+  "license": "GPL-3.0-or-later",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
