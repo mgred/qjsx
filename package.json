@@ -12,9 +12,9 @@
     "jasmine": "^4.1.0",
     "typescript": "latest"
   },
-  "scripts": {
-    "link-types": "cd packages/types && npm link; cd -; npm link @qjsx/types",
-    "build": "bazel build //...",
-    "test": "bazel test //..."
-  }
+  "workspaces": [
+    "packages/io",
+    "packages/types",
+    "packages/web"
+  ]
 }
