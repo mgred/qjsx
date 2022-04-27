@@ -6,5 +6,10 @@
   "files": [
     "*.d.ts",
     "package.json"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgred/qjsx.git",
+    "directory": "packages/types"
+  }
 }

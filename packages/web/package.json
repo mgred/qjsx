@@ -3,5 +3,10 @@
   "main": "index.js",
   "version": "0.0.0-PLACEHOLDER",
   "types": "index.d.ts",
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgred/qjsx.git",
+    "directory": "packages/web"
+  }
 }
