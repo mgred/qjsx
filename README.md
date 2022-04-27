@@ -1,25 +1,17 @@
-<h1 align="center">
-  qjsx
-</h1>
+# qjsx
 
-<i align="center">
-  QuickJS Extensions
-</i>
-
-<h3 align="center">Packages</h3>
-
-<p align="center">
-  <strong>
-    <a href="packages/io">IO</a>
-    &#183;
-    <a href="packages/web">Web</a>
-    &#183;
-    <a href="packages/types">Types</a>
-  </strong>
-</p>
+> QuickJS Extensions
 
 **qjsx** is a set of packages built on top of [QuickJS](https://bellard.org/quickjs/).
 The code is written in TypeScript and published via npm.
+
+[![Tests](https://github.com/mgred/qjsx/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/mgred/qjsx/actions/workflows/tests.yml)
+
+## Packages
+
+- [**io**](packages/io)
+- [**web**](packages/web)
+- [**types**](packages/types)
 
 ## License
 
