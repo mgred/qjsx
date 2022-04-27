@@ -12,6 +12,15 @@ fi
 readonly NPM_COMMAND=${1:-publish}
 readonly BAZEL=`which bazel`
 
+if [ ! -z ${TAG_NAME+x} ]; then
+  export PACKAGE_VERSION=${TAG_NAME:1}
+fi
+
+if [ -z ${PACKAGE_VERSION+x} ]; then
+  echo "PACKAGE_VERSION must be set"
+  exit 1
+fi
+
 if [ "$BAZEL" == "" ]; then
   echo -e "Bazel is not installed"
   exit 1
