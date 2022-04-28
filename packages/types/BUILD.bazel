@@ -11,5 +11,6 @@ pkg_npm(
     name = "types_npm",
     package_name = "@qjsx/types",
     srcs = [":package.json"],
+    deps = [":README.md"] + glob(["*.d.ts"]),
     substitutions = {"0.0.0-PLACEHOLDER": "{PACKAGE_VERSION}"},
 )

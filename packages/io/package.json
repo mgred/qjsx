@@ -1,5 +1,6 @@
 {
   "name": "@qjsx/io",
+  "description": "Wrappers for basic i/o operations",
   "main": "index.js",
   "type": "module",
   "version": "0.0.0-PLACEHOLDER",

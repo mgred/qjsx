@@ -58,5 +58,5 @@ def ts_package(name):
       package_name = package_name,
       srcs = [":package.json"],
       substitutions = {"0.0.0-PLACEHOLDER": "{PACKAGE_VERSION}"},
-      deps = [ts_name, ":LICENSE"],
+      deps = [ts_name, ":LICENSE", ":README.md"],
   )

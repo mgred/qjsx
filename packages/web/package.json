@@ -1,5 +1,6 @@
 {
   "name": "@qjsx/web",
+  "description": "Functions to build web applications",
   "main": "index.js",
   "version": "0.0.0-PLACEHOLDER",
   "license": "GPL-3.0-or-later",
