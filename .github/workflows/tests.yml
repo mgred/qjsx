@@ -3,6 +3,11 @@ name: Tests
 on:
   push:
     branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   tests:
@@ -10,5 +15,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Bazel Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            "~/.cache/bazel"
+            "~/.cache/bazel-repo"
+          key: bazel-cache-${{ hashFiles('**/*.ts', '**/*.json', '**/BUILD.bazel', '**/*.md') }}
+          restore-keys: bazel-cache-
       - name: Execute Tests
-        run: bazel test //...
+        run: bazel --bazelrc .ci.bazelrc --bazelrc .bazelrc test //...
+        env:
+          BAZEL_REPO_CACHE: ~/.cache/bazel-repo
