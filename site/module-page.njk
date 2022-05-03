@@ -1,0 +1,23 @@
+---
+layout: page.njk
+pagination:
+  data: modules.children
+  size: 1
+  alias: module
+permalink: "packages/{{ module.name }}/api/"
+title: ""
+eleventyComputed:
+  title: "@qjsx/{{ module.name }}"
+  tags:
+    - packages
+    - "{{ module.name }}"
+    - api
+---
+
+{% from "function.njk" import signatures %}
+
+{% for child in module.children %}
+  {% if child.kindString == "Function" %}
+  {{ signatures(child.signatures) }}
+  {% endif %}
+{% endfor %}

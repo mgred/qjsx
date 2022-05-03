@@ -1,16 +1,6 @@
-load("@build_bazel_rules_nodejs//:index.bzl", "js_library", "pkg_npm")
+load("//tools:qjsx_package.bzl", "qjsx_package")
 
-js_library(
+qjsx_package(
     name = "types",
-    package_name = "@qjsx/types",
-    srcs = ["package.json"] + glob(["*.d.ts"]),
-    visibility = ["//visibility:public"],
-)
-
-pkg_npm(
-    name = "types_npm",
-    package_name = "@qjsx/types",
-    srcs = [":package.json"],
-    deps = [":README.md"] + glob(["*.d.ts"]),
-    substitutions = {"0.0.0-PLACEHOLDER": "{PACKAGE_VERSION}"},
+    data = glob(["*.d.ts"]),
 )

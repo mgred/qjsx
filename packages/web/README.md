@@ -1,3 +1,12 @@
+---
+permalink: /packages/web/index.html
+layout: page.njk
+title: web
+tags:
+  - packages
+  - web
+---
+
 # @qjsx/web
 
 > Functions to build web applications

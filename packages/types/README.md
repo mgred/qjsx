@@ -1,3 +1,12 @@
+---
+permalink: /packages/types/index.html
+layout: page.njk
+title: types
+tags:
+  - packages
+  - types
+---
+
 # @qjsx/types
 
 > Type definitions for QuickJS
