@@ -1,0 +1,69 @@
+load("@build_bazel_rules_nodejs//:index.bzl", "npm_package_bin")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@npm//@bazel/typescript:index.bzl", "ts_project")
+load(":eleventy.bzl", "eleventy")
+
+filegroup(
+    name = "srcs",
+    srcs = ["module-page.njk", "packages.md"] + glob(["_includes/*"]),
+)
+
+ts_project(
+    name = "config",
+    srcs = ["eleventy.ts"],
+    deps = ["@npm//@types/node"],
+    extends = "//:tsconfig.json",
+    tsconfig = {
+        "compilerOptions": {
+            "module": "commonjs",
+            "types": ["node"],
+        },
+    },
+)
+
+npm_package_bin(
+    name = "modules",
+    outs = ["modules.json"],
+    tool = "@npm//typedoc/bin:typedoc",
+    args = [
+        "--json $@",
+        "$(location //packages/io:index.ts)",
+        "$(location //packages/web:index.ts)",
+    ],
+    data = [
+        "//packages/io:index.ts",
+        "//packages/web:index.ts",
+        "//:tsconfig.json",
+        "//:tsconfig.test",
+        "@npm//@qjsx/types",
+    ],
+)
+
+pkg_tar(
+    name = "data",
+    srcs = [":modules"],
+    package_dir = "_data",
+)
+
+pkg_tar(
+    name = "input",
+    srcs = [
+        "//:README.md",
+        "//:COPYING",
+        "//:DEVELOPMENT.md",
+        ":srcs",
+        ":config"
+    ],
+    deps = [
+        ":data",
+        "//packages/io:docs",
+        "//packages/web:docs",
+        "//packages/types:docs",
+    ],
+    strip_prefix = ".",
+)
+
+eleventy(
+    name = "site",
+    pkg = ":input",
+)

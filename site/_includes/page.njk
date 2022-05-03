@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>qjsx - {{ title }} - Documentation</title>
+    <style>
+      {% include "style.css" %}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <p>
+        <a href="/">qjsx</a>
+        {% for tag in tags %}
+          <!-- Breadcrumbs by tags -->
+          »
+          {% if not loop.last %}
+            <a href="/{{ tagsToUrl(tags, loop.index) }}">{{ tag }}</a>
+          {% else %}
+            {{ tag }}
+          {% endif %}
+          <!-- /Breadcrumbs by tags -->
+        {% endfor %}
+      </p>
+    </header>
+    <main>
+      {#
+      <!-- <nav> -->
+      <!--   <ul> -->
+      <!--     {% for p in collections.packages %} -->
+      <!--     <li> -->
+      <!--       <a href="{{ p.url }}" {% if p.url === page.url %}class="active"{% -->
+      <!--       endif %}>{{ p.data.title }}</a> -->
+      <!--     </li> -->
+      <!--     {% endfor %} -->
+      <!--   </ul> -->
+      <!-- </nav> -->
+      #}
+      <article>
+        {{ content | safe }}
+      </article>
+    </main>
+  </body>
+</html>

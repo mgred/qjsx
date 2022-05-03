@@ -1,3 +1,12 @@
+---
+permalink: /packages/io/index.html
+layout: page.njk
+title: io
+tags:
+  - packages
+  - io
+---
+
 # @qjsx/io
 
 > Wrappers for basic i/o operations

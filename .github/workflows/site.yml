@@ -1,16 +1,13 @@
-name: Tests
+name: Site
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
-  tests:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,7 +20,12 @@ jobs:
             "~/.cache/bazel-repo"
           key: bazel-cache-${{ hashFiles('**/*.ts', '**/*.json', '**/BUILD.bazel', '**/*.md') }}
           restore-keys: bazel-cache-
-      - name: Execute Tests
-        run: bazel --bazelrc .ci.bazelrc --bazelrc .bazelrc test //packages/...
+      - name: Build site
+        run: bazel --bazelrc .ci.bazelrc --bazelrc .bazelrc build //site
         env:
           BAZEL_REPO_CACHE: ~/.cache/bazel-repo
+      - name: Upload to Netlify
+        run: netlify deploy --dir=dist/bin/site/dist --prod
+        env:
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

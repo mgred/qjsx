@@ -1,3 +1,9 @@
-load("//tools:package.bzl", "ts_package")
+load("//tools:qjsx_package.bzl", "qjsx_package")
 
-ts_package(name = "web")
+exports_files(["package.json", "index.ts"])
+
+qjsx_package(
+    name = "web",
+    srcs = ["index.ts"],
+    specs = ["test.ts"],
+)

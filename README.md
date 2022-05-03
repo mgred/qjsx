@@ -1,3 +1,8 @@
+---
+permalink: /index.html
+layout: page.njk
+---
+
 # qjsx
 
 > QuickJS Extensions
@@ -9,9 +14,13 @@ The code is written in TypeScript and published via npm.
 
 ## Packages
 
-- [**io**](packages/io)
-- [**web**](packages/web)
-- [**types**](packages/types)
+- [io](packages/io)
+- [web](packages/web)
+- [types](packages/types)
+
+## Development
+
+See the [Development](/development) section on how to setup.
 
 ## License
 

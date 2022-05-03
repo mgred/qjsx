@@ -1,0 +1,33 @@
+{% macro signatures(value) %}
+<!-- -->
+{% for sig in value %}
+<div>
+  {{ sig.name }}({{ parameters(sig.parameters) }}): {{ return_type(sig.type) }}
+</div>
+{% endfor %}
+<!-- -->
+{% endmacro %}
+
+<!-- -->
+{% macro parameters(value) %}
+<!-- -->
+{% for p in value %}
+{{ p.name }}: {{ p.type.name }}{% if not loop.last %},{% endif %} {% endfor %}
+<!-- -->
+{% endmacro %}
+
+<!-- -->
+{% macro return_type(value) %}
+<!-- -->
+{% if value.types %}
+  {% set pipe = joiner("|")%}
+  {% for t in value.types %}
+  {{pipe()}} {{ t.name if t.name else (t.value | stringify) }}
+  {% endfor %}
+{% endif %}
+
+{% if value.type %}
+  {{ value.name if value.name else (value.value | stringify) }}
+{% endif %}
+<!-- -->
+{% endmacro %}
